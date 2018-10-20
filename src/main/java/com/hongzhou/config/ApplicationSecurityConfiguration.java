@@ -49,7 +49,7 @@ public class ApplicationSecurityConfiguration extends WebSecurityConfigurerAdapt
 			//.httpBasic();
 			.formLogin()
 			.loginPage("/login").permitAll()
-			.and()
+			.and() 
 			.logout().invalidateHttpSession(true)
 			.clearAuthentication(true)
 			.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))

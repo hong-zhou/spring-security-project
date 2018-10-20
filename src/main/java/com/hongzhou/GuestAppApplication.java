@@ -35,7 +35,7 @@ public class GuestAppApplication {
 		resource.setClientSecret("secret");
 		resource.setGrantType("client_credentials");
 		resource.setScope(new ArrayList<String>() {
-			{add("READ_ALL_GUEST"); add("WRITE_GUEST"); add("UPDATE_GUEST");}
+			{add("READ_ALL_GUESTS"); add("WRITE_GUEST"); add("UPDATE_GUEST");}
 			});
 		resource.setAuthenticationScheme(AuthenticationScheme.form);
 		AccessTokenRequest request = new DefaultAccessTokenRequest();
