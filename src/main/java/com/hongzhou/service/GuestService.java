@@ -21,9 +21,14 @@ public class GuestService {
     @Value("${landon.guest.service.url}")
     private String guestServiceUrl;
 
-    private final RestTemplate restTemplate = new RestTemplate();
+    private final RestTemplate restTemplate;
 
-    public List<Guest> getAllGuests(){
+    public GuestService(RestTemplate restTemplate) {
+		super();
+		this.restTemplate = restTemplate;
+	}
+
+	public List<Guest> getAllGuests(){
         String url = guestServiceUrl + GUESTS;
         HttpEntity<String> request = new HttpEntity<>(null, null);
         return this.restTemplate.exchange(url, HttpMethod.GET, request, new ParameterizedTypeReference<List<Guest>>() { }).getBody();
